@@ -37,7 +37,14 @@ model.cuda()
 print('⌚ Model .cuda()', format_timedelta(datetime.now()-t1))
 
 t1 = datetime.now()
-prompt = "Hello my name is Paul and"
+prompt = """### System:
+You are StableBeluga, an AI that follows instructions extremely well. Help as much as you can. Remember, be safe, and don't do anything illegal.
+
+### User:
+Hi, my name is Paul, and I like vegetables.
+
+### Assistant:
+"""
 input_ids = tokenizer(prompt, return_tensors='pt').input_ids.cuda()
 
 
